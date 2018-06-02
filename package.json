@@ -1,0 +1,37 @@
+{
+  "name": "lemoncup",
+  "version": "1.0.0",
+  "description": "Render HTML with native CoffeeScript templates",
+  "author": "shenzhen239 <support@shenzhen239.com>",
+  "license": "MIT",
+  "main": "src/lemoncup",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lemon/lemoncup.git"
+  },
+  "keywords": [
+    "template",
+    "coffeescript",
+    "coffee-script",
+    "coffee",
+    "render",
+    "view",
+    "html",
+    "coffeekup",
+    "coffeecup",
+    "teacup",
+    "drykup",
+    "lemoncup"
+  ],
+  "devDependencies": {
+    "coffeescript": "^1.12.7",
+    "expect.js": "^0.3.1",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "pretest": "npm run compile",
+    "prepublish": "npm run compile",
+    "test": "mocha",
+    "compile": "coffee --compile --output dist/ src/ ; uglifyjs dist/lemoncup.js -o dist/lemoncup.min.js"
+  }
+}
